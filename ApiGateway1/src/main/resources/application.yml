@@ -1,0 +1,12 @@
+server:
+  port: 9000
+
+spring:
+  cloud:
+    gateway:
+      routes:
+        #route mapping
+      - id: customerservice
+        uri: http://192.168.0.103:8083
+        predicates:
+        - Path= /**
