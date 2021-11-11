@@ -1,12 +1,13 @@
-package com.microservice.CustomerService;
+package com.microservice.Station;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class CustomerServiceApplication {
+public class StationApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(CustomerServiceApplication.class, args);
+		SpringApplication.run(StationApplication.class, args);
 	}
+
 }

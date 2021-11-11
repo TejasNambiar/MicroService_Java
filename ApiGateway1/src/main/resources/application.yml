@@ -2,11 +2,18 @@ server:
   port: 9000
 
 spring:
+  application:
+    name: apigateway
   cloud:
     gateway:
       routes:
         #route mapping
-      - id: customerservice
-        uri: http://192.168.0.105:8083
+      - id: customer-service
+        uri: http://192.168.0.102:8083
+        predicates:
+        - Path= /**
+        
+      - id: station
+        uri: http://192.168.0.102:8081
         predicates:
         - Path= /**

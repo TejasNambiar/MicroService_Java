@@ -1,4 +1,4 @@
-package com.microservice.CustomerService;
+package com.microservice.Station;
 
 import java.util.List;
 
@@ -13,41 +13,39 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.microservice.CustomerService.models.ServiceModel;
+import com.microservice.Station.Model.StationModel;
 
-//@CrossOrigin(origins = "http://localhost:4200")
 @CrossOrigin(origins = "*")
 @RestController
-@RequestMapping("/service")
+@RequestMapping("/station")
 public class ServiceController {
 
 	@Autowired
 	ServiceImplementation serviceImplementation;
 
 	@GetMapping("")
-	public List<ServiceModel> getAll() {
+	public List<StationModel> getAll() {
 		return serviceImplementation.getAll();
 	}
 
 	@PostMapping("")
-	public ServiceModel addServiceQuery(@RequestBody ServiceModel query) {
-		return serviceImplementation.addServiceQuery(query);
+	public StationModel addStation(@RequestBody StationModel station) {
+		return serviceImplementation.addStation(station);
 	}
 
 	@PutMapping("")
-	public ServiceModel updateServiceQuery(@RequestBody ServiceModel query) {
-		if (query.getId() != null)
-			return serviceImplementation.updateQuery(query);
-		return null;
+	public StationModel updateStation(@RequestBody StationModel station) {
+		return serviceImplementation.updateStation(station);
 	}
 
 	@DeleteMapping("/{id}")
-	public void deleteQuery(@PathVariable String id) {
-		serviceImplementation.delete(id);
+	public void deleteStation(@PathVariable String id) {
+		serviceImplementation.deleteStation(id);
 	}
 
 	@GetMapping("/{id}")
-	public Object getQueryId(@PathVariable String id) {
-		return serviceImplementation.getOrderId(id);
+	public Object getStationId(@PathVariable String id) {
+		return serviceImplementation.getStationId(id);
 	}
+
 }

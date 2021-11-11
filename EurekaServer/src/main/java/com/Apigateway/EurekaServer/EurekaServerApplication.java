@@ -11,14 +11,4 @@ public class EurekaServerApplication {
 	public static void main(String[] args) {
 		SpringApplication.run(EurekaServerApplication.class, args);
 	}
-
-//	@Bean
-//	public WebMvcConfigurer corsConfigurer() {
-//		return new WebMvcConfigurerAdapter() {
-//			@Override
-//			public void addCorsMappings(CorsRegistry registry) {
-//				registry.addMapping("/service").allowedOrigins("http://192.168.0.101:8083");
-//			}
-//		};
-//	}
 }
