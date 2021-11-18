@@ -34,16 +34,16 @@ public class ServiceController {
 		return serviceImplementation.addServiceQuery(query);
 	}
 
-	@PutMapping("")
-	public ServiceModel updateServiceQuery(@RequestBody ServiceModel query) {
+	@PutMapping("/{id}")
+	public ServiceModel updateServiceQuery(@PathVariable String id, @RequestBody ServiceModel query) {
 		if (query.getId() != null)
-			return serviceImplementation.updateQuery(query);
+			return serviceImplementation.updateQuery(query, id);
 		return null;
 	}
 
 	@DeleteMapping("/{id}")
-	public void deleteQuery(@PathVariable String id) {
-		serviceImplementation.delete(id);
+	public String deleteQuery(@PathVariable String id) {
+		return serviceImplementation.delete(id);
 	}
 
 	@GetMapping("/{id}")

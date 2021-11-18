@@ -23,6 +23,14 @@ public class ServiceModel {
 		this.serviceName = serviceName;
 	}
 
+	public ServiceModel(String id, String userName, String serviceName, String serviceRequest) {
+		this.id = id;
+		this.userName = userName;
+		this.serviceName = serviceName;
+		this.serviceRequest = serviceRequest;
+		this.serviceResponse = serviceResponse;
+	}
+
 	public String getUserName() {
 		return userName;
 	}
